@@ -21,6 +21,10 @@ const Nearbyjobs = () => {
     }
   );
 
+  const handleCardPress = (item) => {
+    router.push(`/job-details/${item.job_id}`);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -41,7 +45,7 @@ const Nearbyjobs = () => {
               <NearbyJobCard 
                 job={job}
                 key={`nearby-job-${job?.job_id}`}
-                handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+                handleCardPress={handleCardPress}
               />
             ))
           )
